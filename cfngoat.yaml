@@ -301,13 +301,11 @@ Resources:
       BackupRetentionPeriod: 0
       StorageEncrypted: False
       MonitoringInterval: 0
-      PubliclyAccessible: True
       Tags:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-rds"
         - Key: Environment
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}"
-
   DefaultDBOptionGroup:
     Type: AWS::RDS::OptionGroup
     Properties:
@@ -320,7 +318,6 @@ Resources:
           Value: !Sub "og-${AWS::AccountId}-${CompanyName}-${Environment}"
         - Key: Environment
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}"
-
   DefaultDBParameterGroup:
     Type: AWS::RDS::DBParameterGroup
     Properties:
